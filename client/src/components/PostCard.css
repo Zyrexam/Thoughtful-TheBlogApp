@@ -1,0 +1,36 @@
+/* PostCard.css */
+.post-card {
+    width: 250px;
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .post-image {
+    background-color: #e2e8f0; /* light gray */
+    height: 120px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .post-title {
+    font-weight: bold;
+    font-size: 1.125rem;
+  }
+  
+  .post-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    color: #718096; /* gray */
+  }
+  
+  .post-author, .post-date {
+    display: flex;
+    align-items: center;
+  }
+  
+  .post-author i, .post-date i {
+    margin-right: 0.5rem;
+  }
+  

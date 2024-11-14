@@ -1,0 +1,89 @@
+/* Navbar container */
+.navbar {
+  background-color: #1a56db; /* Blue color */
+  padding: 1rem 2rem; /* Padding for spacing */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo styling */
+.navbar-logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Navigation menu */
+.navbar-menu {
+  display: flex;
+  gap: 1.5rem; /* Space between menu items */
+}
+
+/* Navigation links */
+.navbar-item {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 8px 16px; /* Padding for easier clicking */
+}
+
+/* Hover effect for navbar links */
+.navbar-item:hover {
+  background-color: #2563eb; /* Hover color */
+  border-radius: 4px; /* Slight rounding for a modern feel */
+}
+
+/* Dropdown menu for Profile */
+.navbar-profile {
+  position: relative;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  color: black;
+  display: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-profile:hover .profile-dropdown {
+  display: block;  /* Show the dropdown when hovering */
+}
+
+/* Dropdown items */
+.profile-dropdown-item {
+  color: black;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+}
+
+.profile-dropdown-item:hover {
+  background-color: #f0f0f0; /* Subtle hover effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar {
+      padding: 1rem; /* Less padding on small screens */
+  }
+
+  .navbar-menu {
+      flex-direction: column; /* Stack items vertically */
+      gap: 1rem; /* Adjust the spacing between items */
+      text-align: center; /* Center the menu items */
+  }
+
+  .navbar-item {
+      padding: 10px;
+      font-size: 1.2rem;
+  }
+
+  .navbar-logo {
+      font-size: 1.5rem;
+  }
+}

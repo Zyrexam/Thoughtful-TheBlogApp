@@ -1,0 +1,49 @@
+/* ProfilePage.css */
+
+.profile-page {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.profile-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.profile-email {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.profile-posts {
+    margin-top: 40px;
+}
+
+.profile-posts-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.profile-post-item {
+    margin-bottom: 15px;
+}
+
+.profile-post-link {
+    font-size: 1.2rem;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.profile-post-link:hover {
+    text-decoration: underline;
+}

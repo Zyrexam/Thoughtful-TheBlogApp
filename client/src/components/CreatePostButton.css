@@ -1,0 +1,29 @@
+
+.create-post-button-container {
+    position: fixed;
+    bottom: 2rem;  
+    right: 2rem;   
+  }
+  
+  
+  .create-post-button {
+    background-color: #3b82f6;  
+    color: white;
+    font-weight: bold;
+    padding: 1rem 1.25rem;  
+    border-radius: 50px;     
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    align-items: center;
+    text-decoration: none; 
+  }
+  
+ 
+  .create-post-button:hover {
+    background-color: #2563eb; 
+  }
+  
+  .create-post-icon {
+    margin-right: 0.5rem; 
+  }
+  

@@ -1,0 +1,30 @@
+/* RecentPosts.css */
+.recent-posts {
+    margin-top: 2rem;
+  }
+  
+  .recent-posts-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .recent-posts-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    color: #2b6cb0; /* blue */
+  }
+  
+  .recent-post-item {
+    margin-bottom: 0.5rem;
+  }
+  
+  .recent-post-item a {
+    color: #2b6cb0;
+    text-decoration: none;
+  }
+  
+  .recent-post-item a:hover {
+    text-decoration: underline;
+  }
+  

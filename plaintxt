@@ -1,0 +1,45 @@
+ThoughtFULL/
+├── client/                         # Frontend (React)
+│   ├── src/
+│   │   ├── App.jsx                 # Main React component, routes setup
+│   │   ├── index.js                # React entry point
+│   │   ├── assets/                 # Static assets (images, fonts, etc.)
+│   │   ├── components/             # Reusable components
+│   │   │   ├── NavBar.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   ├── PostPage.jsx
+│   │   │   ├── PostCard.jsx
+│   │   │   ├── PostSlider.jsx     
+│   │   │   ├── RecentPosts.jsx     
+│   │   │   └── CreateBlogForm.jsx            
+│   │   ├── hooks/                  # Custom hooks
+│   │   ├── pages/                  # Main pages for routing
+│   │   │   ├── HomePage.jsx        # Homepage displaying trending posts, user posts, etc.
+│   │   │   ├── PostPage.jsx        # Page to display a single post in detail
+│   │   │   ├── ProfilePage.jsx     # User profile page
+│   │   │   └── ...                 # Additional pages as needed
+│   │   ├── styles/                 # Styling (CSS or Tailwind config)
+│   │   │   ├── HomePage.css
+│   │   │   └── ...                 # Additional stylesheets
+│   │   └── utils/                  # Utility functions (e.g., API calls)
+│   │       ├── api.js              # For making API requests to the backend
+│   │       └── helpers.js          # Other helper functions
+│   └── vite.config.js              # Vite configuration for the React app
+│
+├── server/                         # Backend (Express, MongoDB)
+│   ├── models/                     # Mongoose models
+│   │   ├── Post.js                 # Post model schema
+│   │   ├── User.js                 # User model schema
+│   │   └── ...                     # Additional models
+│   ├── routes/                     # API routes
+│   │   ├── postRoutes.js                # Routes for handling post-related API calls
+│   │   ├── Posts.js                # Routes for handling user-related API calls
+│   ├── controllers/                # Controllers for handling business logic
+│   │   ├── postController.js       # Functions for post-related logic
+│   ├── config/                     # Configuration files
+│   │   └── db.js                   # MongoDB connection setup
+│   └── index.js                    # Server entry point
+│
+├── .env                            # Environment variables (e.g., DB connection URI)
+├── package.json                    # Project dependencies
+└── README.md                       # Project documentation

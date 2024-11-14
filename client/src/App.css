@@ -1,0 +1,97 @@
+/* Main Container */
+.app-container {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #ffffff; /* White background */
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Header Section */
+header {
+  padding: 10px 0;
+  height: 25px;
+  background-color: #CFFAFF; /* Soft blue for the header */
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+header .first {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+header nav ul li a {
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+header nav ul li a:hover {
+  background-color: #2563eb; /* Darker blue on hover */
+  border-radius: 4px;
+}
+
+/* Main Content Section */
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Footer Section */
+footer {
+  padding: 10px 0;
+  background-color: #3b82f6; /* Matching footer color with the header */
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* General Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff; /* White background for the body */
+  color: #333; /* Dark text color for better readability */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 10px;
+  }
+
+  header {
+    font-size: 1.3rem;
+  }
+
+  footer {
+    font-size: 0.875rem;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  header nav ul li a {
+    font-size: 0.9rem;
+  }
+}

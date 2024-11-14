@@ -1,0 +1,81 @@
+/* Post Slider */
+.post-wrapper {
+  margin: 20px auto;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.slider-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.post-slider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.post-slider ul {
+  display: flex;
+  gap: 20px;
+}
+
+.post {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 10px;
+  width: 250px;
+  overflow: hidden;
+}
+
+.post-image {
+  height: 180px;
+  background-color: #ccc;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.post-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.post-title a {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.username,
+.date {
+  display: flex;
+  align-items: center;
+}
+
+.username i, .date i {
+  margin-right: 5px;
+}
+
+.slider-button {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #3182ce;
+  cursor: pointer;
+}
+
+.slider-button:hover {
+  color: #2b6cb0;
+}
