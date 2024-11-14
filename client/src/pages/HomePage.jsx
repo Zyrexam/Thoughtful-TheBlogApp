@@ -9,7 +9,6 @@ function HomePage() {
     <div className="homepage-container">
       <header className="homepage-header">
         <h1 className="homepage-title">ThoughtFULL</h1>
-        <h2 className="homepage-subtitle">Trending Posts</h2>
       </header>
       
       <main>

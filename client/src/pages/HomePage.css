@@ -1,3 +1,6 @@
+/* import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css"; */
+
 /* Homepage Container */
 .homepage-container {
   display: flex;
@@ -23,12 +26,6 @@
   letter-spacing: 0.5px; /* Slight letter spacing for a more polished look */
 }
 
-.homepage-subtitle {
-  font-size: 1.75rem; /* Slightly larger for the subtitle */
-  font-weight: 600;
-  color: #4a5568; /* Darker gray for contrast */
-  margin-bottom: 2rem;
-}
 
 /* Main Section */
 main {

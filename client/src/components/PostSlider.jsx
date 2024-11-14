@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function PostSlider() {
   const [posts, setPosts] = useState([]);
@@ -17,7 +19,6 @@ function PostSlider() {
         console.error("Error fetching posts:", error);
       }
     }
-
     fetchPosts();
   }, []);
 
@@ -41,7 +42,7 @@ function PostSlider() {
               <div className="slider-post-info">
                 <div className="slider-post-author">
                   <i className="fas fa-user"></i>
-                  <span>{post.username}</span>
+                  <span>{post.authorId || "Unknown Author"}</span> {/* Use authorId as placeholder */}
                 </div>
                 <div className="slider-post-date">
                   <i className="fas fa-calendar-day"></i>

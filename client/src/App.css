@@ -11,37 +11,43 @@
 
 /* Header Section */
 header {
-  padding: 10px 0;
-  height: 25px;
+  height: 25px; /* Fixed height */
   background-color: #CFFAFF; /* Soft blue for the header */
   color: white;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1rem; /* Smaller font to fit within 25px */
   font-weight: bold;
+  line-height: 25px; /* Align text vertically in the center */
+  padding: 0; /* Remove extra padding */
 }
 
 header .first {
-  font-size: 1.75rem;
+  font-size: 1.25rem; /* Adjust for main title within 25px */
   font-weight: bold;
 }
 
 header nav ul {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 10px; /* Adjust spacing between items */
+  padding: 0;
+  margin: 0;
+  list-style: none; /* Remove default bullets */
+  height: 25px; /* Match the navbar height */
 }
 
 header nav ul li a {
   color: white;
-  padding: 8px 16px;
+  padding: 0 8px; /* Narrow padding to fit content in 25px height */
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.875rem; /* Smaller font size for the limited height */
+  line-height: 25px; /* Center align text vertically */
   transition: background-color 0.3s;
 }
 
 header nav ul li a:hover {
   background-color: #2563eb; /* Darker blue on hover */
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 /* Main Content Section */
@@ -57,7 +63,7 @@ header nav ul li a:hover {
 /* Footer Section */
 footer {
   padding: 10px 0;
-  background-color: #3b82f6; /* Matching footer color with the header */
+  background-color: #3b82f6;
   color: white;
   text-align: center;
   font-size: 1rem;
@@ -68,8 +74,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: #ffffff; /* White background for the body */
-  color: #333; /* Dark text color for better readability */
+  background-color: #ffffff;
+  color: #333;
 }
 
 /* Responsive Adjustments */
@@ -79,7 +85,7 @@ body {
   }
 
   header {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 
   footer {
@@ -88,10 +94,10 @@ body {
 
   header nav ul {
     flex-direction: column;
-    gap: 8px;
+    gap: 5px;
   }
 
   header nav ul li a {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 }
