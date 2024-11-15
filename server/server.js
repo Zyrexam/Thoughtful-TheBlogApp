@@ -6,7 +6,7 @@ import path from "path";
 import cors from "cors";
 import { fileURLToPath } from "url";
 
-// Get __dirname in ES module context
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -14,7 +14,7 @@ const app = express();
 const PORT = 3000;
 
 // Connect to MongoDB
-const uri = "mongodb://localhost:27017/blogdb";
+const uri = "mongodb://localhost:27017/Blogdb";
 mongoose
   .connect(uri)
   .then(() => console.log("Connected to MongoDB"))
@@ -23,6 +23,8 @@ mongoose
 // Middleware
 app.use(express.static(path.join(__dirname, "../frontend")));
 app.use(cors());
+app.use(cors({ origin: 'http://localhost:5175' })); 
+
 app.use(express.json()); // Parse incoming JSON requests
 
 app.listen(PORT, () => console.log(`Server started at port ${PORT}`));
@@ -33,16 +35,27 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../frontend/index.html"));
 });
 
-// Fetch recent posts
+app.get("/api/test-db", async (req, res) => {
+  try {
+    const count = await Post.countDocuments();
+    res.json({ success: true, postCount: count });
+  } catch (error) {
+    res.status(500).json({ success: false, message: "Database connection issue" });
+  }
+});
+
+
 app.get("/api/recent-posts", async (req, res) => {
   try {
     const recentPosts = await Post.find().sort({ createdAt: -1 }).limit(5);
+    console.log("Recent Posts Fetched:", recentPosts);  // Log the posts
     res.json(recentPosts);
   } catch (error) {
     console.error("Error fetching recent posts:", error);
     res.status(500).json({ message: "Error fetching recent posts" });
   }
 });
+
 
 // Fetch a specific post by ID
 app.get("/api/posts/:id", async (req, res) => {
@@ -73,31 +86,35 @@ app.get("/api/details", async (req, res) => {
 // Create a new post, with new user if necessary
 app.post("/api/create", async (req, res) => {
   const { title, content, username, email } = req.body;
-
   try {
-    // Check if the user exists in the database
-    let user = await User.findOne({ email: email });
+    const existingUser = await User.findOne({ email: email });
 
-    if (!user) {
-      // Create new user if doesn't exist
-      user = new User({ username, email });
-      await user.save();
+    if (existingUser) {
+      const newPost = new Post({
+        title: title,
+        content: content,
+        authorId: existingUser._id,
+      });
+      await newPost.save();
+      return res.json({ success: true, message: "Post created for existing user." });
+    } else {
+      const newUser = new User({ username: username, email: email });
+      await newUser.save();
+
+      const newPost = new Post({
+        title: title,
+        content: content,
+        authorId: newUser._id,
+      });
+      await newPost.save();
+      return res.json({ success: true, message: "User and post created." });
     }
-
-    // Create post for user
-    const newPost = new Post({
-      title,
-      content,
-      authorId: user._id,
-    });
-    await newPost.save();
-
-    res.json({ success: true, message: "User and post created successfully." });
   } catch (error) {
     console.error("Error creating post:", error);
-    res.status(500).json({ message: "Error creating post" });
+    res.status(500).json({ success: false, message: "Error creating post" });
   }
 });
+
 
 // Fetch post by title
 app.get("/api/posts/title/:title", async (req, res) => {
@@ -130,5 +147,16 @@ app.get("/api/posts/author/:email", async (req, res) => {
   } catch (error) {
     console.error("Error fetching posts by author:", error);
     res.status(500).json({ message: "Error fetching posts by author" });
+  }
+});
+
+
+app.get("/api/all-posts", async (req, res) => {
+  try {
+      const allPosts = await Post.find();
+      console.log("All posts:", allPosts);
+      res.json(allPosts);
+  } catch (error) {
+      res.status(500).json({ message: "Error fetching posts" });
   }
 });
